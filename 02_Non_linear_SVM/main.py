@@ -45,7 +45,6 @@ for kernel in kernels.keys() :
      print("Precision score", kernels[kernel].__name__ + ":", precision_score(y_true=y_test, y_pred=y_predict_user))
      disp = DecisionBoundaryDisplay.from_estimator(svm_user, X_transformed, response_method="predict")
      disp.ax_.scatter(X_transformed[:, 0], X_transformed[:, 1], edgecolor="k")
-     plt.show()
 
      # Entrenamos con la función de la libreria
      svm_lib = SVC(C=1000, kernel=kernel)
@@ -54,5 +53,6 @@ for kernel in kernels.keys() :
      print("Precision score", kernel + ":", precision_score(y_true=y_test, y_pred=y_predict_lib))
      print("")
 
+plt.show()
 
 
